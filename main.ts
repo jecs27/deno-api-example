@@ -10,10 +10,10 @@
 
 import { App } from './deps.ts';
 import { api } from './routes/api.ts';
+import { PORT } from './config.ts';
 
-const env = Deno.env.toObject();
 const app = new App();
-const PORT = parseInt(env.PORT) || 3000;
+
 
 app.use('/', api);
 app.listen({ port: PORT });
